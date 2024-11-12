@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Personal",
+        "email": "personal@test.com",
+        "message": "Personal test message",
+        "request_type": "Личный"
+    },
+    {
+        "name": "",
+        "email": "commercial@commercial.com",
+        "message": "commercial message",
+        "request_type": "Коммерческий"
+    }
+]
