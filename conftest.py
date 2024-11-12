@@ -11,3 +11,7 @@ def set_up():
         page.goto("https://www.kolyaefimov.com/")
         page.set_default_timeout(3000)
         yield page
+
+@pytest.fixture(scope="function")
+def teardown(set_up):
+    set_up.close()
