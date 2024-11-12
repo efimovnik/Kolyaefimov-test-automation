@@ -1,10 +1,9 @@
-import pytest
 from playwright.sync_api import expect
 from pages.main_page import MainPage
 
 
-def test_main_page(set_up):
-    page = MainPage(set_up)
+def test_main_page(page):
+    page = MainPage(page)
     page.fill_form(
         name="Test", 
         email="test@test.com",
