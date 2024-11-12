@@ -1,4 +1,5 @@
 pytest-playwright
 pytest-xdist
 pytest
-behave
+pytest-bdd
+pytest-asyncio
