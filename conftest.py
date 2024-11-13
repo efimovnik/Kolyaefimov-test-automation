@@ -1,5 +1,7 @@
 import pytest
 from playwright.sync_api import sync_playwright
+from playwright.sync_api import Page
+from pages.main_page import MainPage
 
 @pytest.fixture(scope="function")
 def browser():
