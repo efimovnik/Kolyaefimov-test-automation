@@ -6,7 +6,7 @@
         "request_type": "Личный"
     },
     {
-        "name": "",
+        "name": "Commercial",   
         "email": "commercial@commercial.com",
         "message": "commercial message",
         "request_type": "Коммерческий"

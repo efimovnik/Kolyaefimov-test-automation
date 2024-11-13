@@ -7,6 +7,6 @@ Feature: Main page form submission
     Then I should see the success message "Спасибо! Ваш запрос уже получен.Я свяжусь с вами по указанному email в течение 3 дней или ранее, если я смогу что-то предложить в ответ."
 
   Examples:
-    | name      | email                    | message               | request_type   |
-    | Personal  | personal@test.com        | Personal test message | Личный         |
-    |           | commercial@commercial.com| commercial message    | Коммерческий   |
+    | name      | email                    | message                  | request_type          |
+    | Personal  | personal@test.com        | Personal test message    | Личный                |
+    | Commercial| commercial@test.com      | commercial test message  | Коммерческий          |
