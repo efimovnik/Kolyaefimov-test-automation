@@ -16,8 +16,11 @@ Feature: Main page form submission
     Given I open the main page
     When I fill the form with name "<name>", email "<email>", message "<message>", and request type "<request_type>"
     And I submit the form
-    Then I should see the validation message
+    Then I should see the validation message "<rejection_message>"
 
   Examples:
-    | name      | email                    | message                  | request_type          |
-    |           |                          |                          |                       |
+    | name      | email                    | message                  | request_type          | rejection_message |
+    |           |                          |                          |                       | Form submission failed. Review the following information: Email and Сообщение.|
+    | empty email & message|               |                          |                       | Form submission failed. Review the following information: Email and Сообщение.|
+    |           | empty_message@test.com   |                          |                       | Form submission failed. Review the following information: Сообщение.|
+    |           |                          | empty email              |                       | Form submission failed. Review the following information: Email.|

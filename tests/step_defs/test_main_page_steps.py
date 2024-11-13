@@ -25,8 +25,8 @@ def step_verify_success_message(login: MainPage, message):
     main_page = MainPage(login)
     expect(main_page.success_message).to_have_text(message)
 
-@then(cfparse('I should see the validation message'))
-def step_verify_success_message(login: MainPage):
+@then(cfparse('I should see the validation message "{rejection_message}"'))
+def step_verify_success_message(login: MainPage, rejection_message):
     main_page = MainPage(login)
     main_page.submit_form()
-    expect(main_page.submission_error).to_be_visible()
+    expect(main_page.submission_error).to_have_text(rejection_message)
