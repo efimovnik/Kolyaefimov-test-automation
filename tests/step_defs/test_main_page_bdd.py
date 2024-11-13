@@ -1,5 +1,5 @@
 from pytest_bdd import scenarios, given, when, then
-from playwright.sync_api import sync_playwright, expect, Page
+from playwright.sync_api import expect, Page
 from pages.main_page import MainPage
 from pytest_bdd.parsers import cfparse, re
 import pytest
@@ -30,14 +30,14 @@ def step_verify_success_message(main_page: MainPage, message):
     expect(main_page.success_message).to_have_text(message)
 
 @then(cfparse('I should see the validation message "{rejection_message}"'))
-def step_verify_success_message(main_page: MainPage, rejection_message):
+def step_verify_validation_message(main_page: MainPage, rejection_message):
     if main_page.submission_error.is_visible():
         expect(main_page.submission_error).to_have_text(rejection_message)
     else: # 403 Forbidden
         expect(main_page.submission_error_forbidden).to_have_text("Forbidden")
     
 @then(cfparse('I should see a "{status_code}" response for the form submission'))
-def step_verify_success_message(main_page: MainPage, status_code):
+def step_verify_submission_status_code(main_page: MainPage, status_code):
     actual_status = main_page.submission_response.status
     assert actual_status == int(status_code), f"Expected status code {status_code}, but got {actual_status}"
     
