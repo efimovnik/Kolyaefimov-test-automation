@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, Response
 import pytest
+import allure
 
 class MainPage:
     def __init__(self, page: Page):
@@ -25,5 +26,4 @@ class MainPage:
         with self.page.expect_response("https://www.kolyaefimov.com/api/form/SaveFormSubmission") as response_info:
             self.submit_button.click()  # submit the form
         self.submission_response = response_info.value
-
-        
+        allure.attach(self.submission_response.text(), name="Submission Response", attachment_type=allure.attachment_type.TEXT)

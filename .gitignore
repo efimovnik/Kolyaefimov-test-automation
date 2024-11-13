@@ -8,3 +8,4 @@
 *.pyd
 /test_results/
 /allure-report/
+/allure-results/
