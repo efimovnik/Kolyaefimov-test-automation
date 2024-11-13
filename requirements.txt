@@ -3,3 +3,4 @@ pytest-xdist
 pytest
 pytest-bdd
 pytest-asyncio
+allure-pytest-bdd

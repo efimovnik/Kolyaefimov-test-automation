@@ -10,8 +10,7 @@ class MainPage:
         self.request_type = page.get_by_label("Тип запроса")
         self.submit_button = page.get_by_role("button", name="Отправить")
         self.success_message = page.locator(".form-submission-text")
-        # Locator when 403 Forbidden returned
-        # self.form_validation_field = page.locator("//p[contains(text(),'Forbidden')]")
+        self.submission_error_forbidden = page.locator("//p[contains(@class,'form-field-error') and contains(text(),'Forbidden')]")
         self.submission_error = page.locator("//p[contains(@class,'form-field-error') and starts-with(text(),'Form submission failed.')]")
 
     def fill_form(self, name: str, email: str, message: str, request_type: str = None):

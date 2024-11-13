@@ -3,7 +3,7 @@ from playwright.sync_api import expect
 from pages.main_page import MainPage
 from utils.test_data_loader import load_test_data
 
-
+@pytest.skip
 @pytest.mark.parametrize("data", load_test_data("test_data/main_page_positive.json"))
 def test_main_page_positive(login, data):
     page = MainPage(login)

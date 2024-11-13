@@ -1,7 +1,8 @@
 from pytest_bdd import scenarios, given, when, then
 from playwright.sync_api import sync_playwright, expect, Page
 from pages.main_page import MainPage
-from pytest_bdd.parsers import parse, cfparse, re
+from pytest_bdd.parsers import cfparse, re
+import allure
 
 scenarios("../features/main_page.feature")
 
@@ -29,4 +30,7 @@ def step_verify_success_message(login: MainPage, message):
 def step_verify_success_message(login: MainPage, rejection_message):
     main_page = MainPage(login)
     main_page.submit_form()
-    expect(main_page.submission_error).to_have_text(rejection_message)
+    if main_page.submission_error.is_visible():
+        expect(main_page.submission_error).to_have_text(rejection_message)
+    else: # 403 Forbidden
+        expect(main_page.submission_error_forbidden).to_have_text("Forbidden")

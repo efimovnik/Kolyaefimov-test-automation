@@ -6,3 +6,5 @@
 *.pyc
 *.pyo
 *.pyd
+/test_results/
+/allure-report/
