@@ -1,0 +1,30 @@
+[
+    {
+        "name": "",
+        "email": "",
+        "message": "",
+        "request_type": "",
+        "rejection_message": "Form submission failed. Review the following information: Email and Сообщение."
+    },
+    {
+        "name": "empty email & message",   
+        "email": "",
+        "message": "",
+        "request_type": "",
+        "rejection_message": "Form submission failed. Review the following information: Email and Сообщение."
+    },
+    {
+        "name": "",   
+        "email": "empty_message@test.com",
+        "message": "",
+        "request_type": "",
+        "rejection_message": "Form submission failed. Review the following information: Сообщение."
+    },
+    {
+        "name": "",   
+        "email": "",
+        "message": "empty email",
+        "request_type": "",
+        "rejection_message": "Form submission failed. Review the following information: Email."
+    }
+]
