@@ -1,0 +1,1 @@
+{"errors":{"email-yui_3_17_2_1_1555014059115_8408":"Email is required.","textarea-yui_3_17_2_1_1555014059115_8410":"\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435 is required."},"error":"Form submission failed. Review the following information: Email and \u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435."}

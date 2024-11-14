@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Nov 14 03:08:21 GMT 2024","Thu Nov 14 03:08:26 GMT 2024","4815","","","","","","Successful form submission [Commercial-commercial@test.com-commercial test message-\u041a\u043e\u043c\u043c\u0435\u0440\u0447\u0435\u0441\u043a\u0438\u0439]",""
+"failed","Thu Nov 14 03:08:12 GMT 2024","Thu Nov 14 03:08:21 GMT 2024","8392","","","","","","Successful form submission [Personal-personal@test.com-Personal test message-\u041b\u0438\u0447\u043d\u044b\u0439]",""
+"passed","Thu Nov 14 03:08:16 GMT 2024","Thu Nov 14 03:08:18 GMT 2024","2256","","","","","","Unsuccessful form submission [empty email & message----400]",""
+"failed","Thu Nov 14 03:08:12 GMT 2024","Thu Nov 14 03:08:16 GMT 2024","3367","","","","","","Unsuccessful form submission [----400]",""
+"failed","Thu Nov 14 03:08:18 GMT 2024","Thu Nov 14 03:08:20 GMT 2024","2297","","","","","","Unsuccessful form submission [-empty_message@test.com---400]",""
+"failed","Thu Nov 14 03:08:21 GMT 2024","Thu Nov 14 03:08:23 GMT 2024","2732","","","","","","Unsuccessful form submission [--empty email--400]",""
