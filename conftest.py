@@ -6,7 +6,7 @@ from pages.main_page import MainPage
 @pytest.fixture(scope="function")
 def browser():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True, slow_mo=50)
         yield browser
         browser.close()
 
