@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository
@@ -29,20 +29,36 @@ jobs:
           pip install -r requirements.txt
           pip install playwright
           playwright install --with-deps chromium
-
-      # Run tests
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Playwright tests
         run: |
           python -m pytest --alluredir=allure-results ./tests/step_defs/test_main_page_bdd.py -n 2
         continue-on-error: true 
 
-      # Optionally push Allure results to an artifact
-      - name: Upload Allure results
+      - name: Load test report history
+        uses: actions/checkout@v3
         if: always()
-        uses: actions/upload-artifact@v3
+        continue-on-error: true
         with:
-          name: allure-results
-          path: allure-results
-     
-      - name: Display test logs
-        run: cat allure-results/*.json
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: build/allure-results
+          keep_reports: 5
+
+      - name: Deploy Allure report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+  #       github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
