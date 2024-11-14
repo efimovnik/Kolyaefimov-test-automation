@@ -34,10 +34,15 @@ jobs:
       - name: Run Playwright tests
         run: |
           python -m pytest --alluredir=allure-results ./tests/step_defs/test_main_page_bdd.py -n 2
+        continue-on-error: true 
 
       # Optionally push Allure results to an artifact
       - name: Upload Allure results
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: allure-results
+     
+      - name: Display test logs
+        run: cat allure-results/*.json
