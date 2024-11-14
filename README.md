@@ -1,1 +1,0 @@
-# Kolyaefimov-test-automation
